@@ -76,7 +76,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               const monthValue = `${currentYear}-${String(index + 1).padStart(2, '0')}`;
               return (
                 <option key={monthValue} value={monthValue}>
-                  {month} {currentYear}
+                  {month}
                 </option>
               );
             })}
