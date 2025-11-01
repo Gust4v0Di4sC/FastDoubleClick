@@ -31,7 +31,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         <select
           value={filterType}
           onChange={(e) => onFilterTypeChange(e.target.value as FilterType)}
-          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2 border text-white border-gray-200 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
         >
           <option value="all">Todos</option>
           <option value="day">Por Dia</option>
@@ -45,7 +45,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             type="date"
             value={filterValue}
             onChange={(e) => onFilterValueChange(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
           />
         )}
 
@@ -53,7 +53,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={filterValue}
             onChange={(e) => onFilterValueChange(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
           >
             <option value="">Selecione a semana</option>
             {Array.from({ length: 53 }, (_, i) => i + 1).map(week => (
@@ -68,7 +68,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={filterValue}
             onChange={(e) => onFilterValueChange(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
           >
             <option value="">Selecione o mês</option>
             {DateUtils.getMonthNames().map((month, index) => {
@@ -87,7 +87,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={filterValue}
             onChange={(e) => onFilterValueChange(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
           >
             <option value="">Selecione o ano</option>
             {Array.from({ length: 11 }, (_, i) => 2020 + i).map(year => (

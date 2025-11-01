@@ -12,13 +12,13 @@ export const Navigation: React.FC<NavigationProps> = ({
   onNavigate 
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+    <div className="bg-gray-800 rounded-lg shadow-lg p-4 mb-6">
       <div className="flex gap-4 justify-center">
         <button
           onClick={() => onNavigate('register')}
           className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
             currentPage === 'register'
-              ? 'bg-blue-600 text-white shadow-md'
+              ? 'bg-blue-800 text-white shadow-md'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
@@ -29,7 +29,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           onClick={() => onNavigate('records')}
           className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
             currentPage === 'records'
-              ? 'bg-blue-600 text-white shadow-md'
+              ? 'bg-blue-800 text-white shadow-md'
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
         >
