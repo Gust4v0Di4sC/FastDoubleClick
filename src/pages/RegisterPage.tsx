@@ -1,11 +1,77 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, CheckCircle } from 'lucide-react';
+import { Clock, CheckCircle } from 'lucide-react';
 import type { TimeRecord } from '../types';
 
 interface RegisterPageProps {
   lastRecord?: TimeRecord;
   onRegister: () => Promise<void>;
 }
+
+const AnimatedClock: React.FC = () => {
+  return (
+    <div className="relative w-32 h-32 mx-auto mb-4">
+      {/* Círculo externo do relógio */}
+      <div className="absolute inset-0 rounded-full border-4 border-blue-600 dark:border-blue-400"></div>
+      
+      {/* Centro do relógio */}
+      <div className="absolute top-1/2 left-1/2 w-3 h-3 -mt-1.5 -ml-1.5 rounded-full bg-blue-600 dark:bg-blue-400 z-10"></div>
+      
+      {/* Ponteiro das horas (gira devagar) */}
+      <div 
+        className="absolute top-1/2 left-1/2 w-1 h-10 -ml-0.5 bg-gray-700 dark:bg-gray-300 rounded-full origin-bottom"
+        style={{
+          transform: 'translateY(-100%)',
+          animation: 'rotate-hour 43200s linear infinite'
+        }}
+      ></div>
+      
+      {/* Ponteiro dos minutos (gira médio) */}
+      <div 
+        className="absolute top-1/2 left-1/2 w-1 h-14 -ml-0.5 bg-blue-600 dark:bg-blue-400 rounded-full origin-bottom"
+        style={{
+          transform: 'translateY(-100%)',
+          animation: 'rotate-minute 3600s linear infinite'
+        }}
+      ></div>
+      
+      {/* Ponteiro dos segundos (gira rápido) */}
+      <div 
+        className="absolute top-1/2 left-1/2 w-0.5 h-16 -ml-0.25 bg-red-500 rounded-full origin-bottom"
+        style={{
+          transform: 'translateY(-100%)',
+          animation: 'rotate-second 60s linear infinite'
+        }}
+      ></div>
+      
+      {/* Marcadores de horas */}
+      {[...Array(12)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute top-2 left-1/2 w-0.5 h-3 bg-gray-400 dark:bg-gray-500"
+          style={{
+            transform: `rotate(${i * 30}deg) translateX(-50%)`,
+            transformOrigin: 'center 58px'
+          }}
+        ></div>
+      ))}
+
+      <style>{`
+        @keyframes rotate-second {
+          from { transform: translateY(-100%) rotate(0deg); }
+          to { transform: translateY(-100%) rotate(360deg); }
+        }
+        @keyframes rotate-minute {
+          from { transform: translateY(-100%) rotate(0deg); }
+          to { transform: translateY(-100%) rotate(360deg); }
+        }
+        @keyframes rotate-hour {
+          from { transform: translateY(-100%) rotate(0deg); }
+          to { transform: translateY(-100%) rotate(360deg); }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 export const RegisterPage: React.FC<RegisterPageProps> = ({ lastRecord, onRegister }) => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -28,7 +94,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ lastRecord, onRegist
     <div className="bg-white rounded-lg shadow-lg p-8">
       <div className="text-center">
         <div className="mb-8">
-          <Calendar size={64} className="mx-auto text-blue-600 mb-4" />
+          <AnimatedClock />
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Registrar Horário Atual
           </h2>
