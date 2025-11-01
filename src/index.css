@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+
+/* Ou aplicar diretamente no body */
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
