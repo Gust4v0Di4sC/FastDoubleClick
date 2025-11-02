@@ -8,7 +8,7 @@ Aplicação web para registro e gerenciamento de horários com interface moderna
 - **Vite** - Build tool
 - **Tailwind CSS v4** - Estilização
 - **Lucide React** - Ícones
-- **LocalStorage** - Persistência de dados
+- **JsonServer** - Persistência de dados
 
 ## ✨ Funcionalidades
 
