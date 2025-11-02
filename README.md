@@ -103,7 +103,7 @@ export default defineConfig({
 
 6. **Rode o projeto**
 ```bash
-npm run dev
+npm run dev:full
 ```
 
 ## 🎨 Customização

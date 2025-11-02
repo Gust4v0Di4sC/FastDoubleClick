@@ -4,7 +4,7 @@ import { RecordsPage } from './pages/RecordsPage';
 import { Navigation } from './components/Layout/Navigation';
 import { Header } from './components/Layout/Header';
 import { DateUtils } from './utils/dateManager';
-import { TimeRecordsService } from './services/service';
+import { ApiService } from './services/service';
 import type { TimeRecord } from './types';
 import { ThemeToggle } from './components/Layout/ThemeToggle';
 
@@ -19,7 +19,7 @@ const App: React.FC = () => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
-  const service = new TimeRecordsService();
+  const service = new ApiService();
 
   useEffect(() => {
     loadRecords();
