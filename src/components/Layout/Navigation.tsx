@@ -12,7 +12,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   onNavigate 
 }) => {
   return (
-    <div className="bg-gray-800 rounded-lg shadow-lg p-4 mb-6">
+    <div className="bg-blue-950 dark:bg-gray-800 rounded-lg shadow-lg p-4 mb-6">
       <div className="flex gap-4 justify-center">
         <button
           onClick={() => onNavigate('register')}

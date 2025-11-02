@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 
-/* Ou aplicar diretamente no body */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }

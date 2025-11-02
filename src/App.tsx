@@ -77,9 +77,9 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen  bg-gray-300 dark:bg-gray-900 p-4 ">
       <ThemeToggle isDark={isDarkMode} onToggle={toggleTheme} />
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto ">
         <Header title="Fast Double Click" />
         
         <Navigation

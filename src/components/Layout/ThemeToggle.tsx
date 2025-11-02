@@ -21,7 +21,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, onToggle }) =>
       {isDark ? (
         <Sun size={24} className="text-yellow-500 animate-spin-slow" />
       ) : (
-        <Moon size={24} className="text-gray-700" />
+        <Moon size={24} className="text-blue-500" />
       )}
     </button>
   );

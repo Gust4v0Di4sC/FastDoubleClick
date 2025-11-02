@@ -11,7 +11,7 @@ const AnimatedClock: React.FC = () => {
   return (
     <div className="relative w-32 h-32 mx-auto mb-4">
       {/* Círculo externo do relógio */}
-      <div className="absolute inset-0 rounded-full border-4 border-white dark:border-blue-400"></div>
+      <div className="absolute inset-0 rounded-full border-4 dark:border-white border-blue-400"></div>
       
       {/* Centro do relógio */}
       <div className="absolute top-1/2 left-1/2 w-3 h-3 -mt-1.5 -ml-1.5 rounded-full bg-blue-600 dark:bg-blue-400 z-10"></div>
@@ -91,7 +91,7 @@ export const RegisterPage: React.FC<RegisterPageProps> = ({ lastRecord, onRegist
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg shadow-lg p-8">
+    <div className="bg-blue-950 dark:bg-gray-800 rounded-lg shadow-lg p-8">
       <div className="text-center">
         <div className="mb-8">
           <AnimatedClock />

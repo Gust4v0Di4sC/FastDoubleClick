@@ -41,7 +41,7 @@ export const RecordsPage: React.FC<RecordsPageProps> = ({ records, onDelete }) =
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg shadow-lg p-6">
+    <div className="bg-blue-950 dark:bg-gray-800 rounded-lg shadow-lg p-6">
       <h2 className="text-2xl font-bold text-gray-200 mb-6">
         Registros ({filteredRecords.length})
       </h2>
